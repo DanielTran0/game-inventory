@@ -1,0 +1,36 @@
+.games {
+	display: flex;
+
+	a {
+		display: block;
+	}
+
+	.game {
+		margin: 10px 30px;
+	}
+
+	.game img {
+		height: 200px;
+	}
+}
+
+.companies {
+	display: flex;
+	margin: 0 20px;
+
+	img {
+		height: 100px;
+	}
+
+	.company {
+		display: flex;
+		flex-direction: column;
+		margin-right: 20px;
+	}
+}
+
+.companies,
+.games,
+.genres {
+	font-size: 1.1rem;
+}

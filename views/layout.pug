@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav 
+      ul
+        li.dropdown 
+          a(href='/games') Games
+          div.dropdown-content
+            a(href='/game/create') Add Game
+        li.dropdown 
+          a(href='/genres') Genres
+          div.dropdown-content
+            a(href='/genre/create') Add Genre
+        li.dropdown 
+          a(href='/companies') Companies
+          div.dropdown-content
+            a(href='/company/create') Add Company
+    
+
+    block content

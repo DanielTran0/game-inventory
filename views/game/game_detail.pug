@@ -1,0 +1,34 @@
+extends  ../layout
+
+block content
+  div.game
+    h1=title
+    
+    div.gameDetail
+      if game.image 
+        img(src=`/images/${game.image}`, alt="game") 
+      h3 Company: 
+        a(href=`/company/${company[0].id}`) #{company[0].name}
+      
+      h3 Genres: 
+        for genre, index in genres 
+          a(href=`/genre/${genre.id}`)|  #{genre.name}
+          
+          if index < genres.length -1
+            |,
+
+        
+      p Price: $#{game.price} Copies: #{game.copies}
+      p Available on: 
+        for system, index in availableSystems 
+          if system.available
+            |  #{system.name}
+          
+            if index < availableSystems.length -1
+              |,
+        
+      hr
+      p
+        a(href=`/game/${game.id}/delete`) Delete game
+      p  
+        a(href=`/game/${game.id}/update`) Update game

@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #045ee6;
+  text-decoration: none;
+}
+
+h1 {
+  margin: 10px 20px;
+}
+
+nav ul {
+  display: flex;
+  background-color: #333;
+  list-style-type: none;
+}
+nav .dropdown {
+  position: relative;
+}
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px;
+  font-size: 16px;
+}
+nav a:hover {
+  background-color: #111;
+}
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+}
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.games {
+  display: flex;
+}
+.games a {
+  display: block;
+}
+.games .game {
+  margin: 10px 30px;
+}
+.games .game img {
+  height: 200px;
+}
+
+.companies {
+  display: flex;
+  margin: 0 20px;
+}
+.companies img {
+  height: 100px;
+}
+.companies .company {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.companies,
+.games,
+.genres {
+  font-size: 1.1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group select {
+  display: block;
+  margin: 10px 0;
+}
+.form-group .checkboxes {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.form-group .checkboxes label {
+  font-weight: normal;
+  margin-right: 5px;
+}
+.form-group .checkboxes div {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+button {
+  width: 200px;
+  padding: 10px;
+}
+
+.game .gameDetail {
+  margin: 0 20px;
+}
+.game img {
+  height: 300px;
+}
+.game h3,
+.game hr {
+  margin: 10px 0;
+}
+
+.companyDetails,
+.genres,
+.change {
+  margin: 0 20px;
+}
+.companyDetails img,
+.genres img,
+.change img {
+  height: 150px;
+}
+
+.delete {
+  margin: 0 20px;
+}
+.delete button {
+  margin: 10px 0;
+}
+.delete h4 {
+  margin: 10px 0;
+}
+
+/*# sourceMappingURL=style.css.map */

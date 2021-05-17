@@ -1,0 +1,18 @@
+extends  ../layout
+
+block content
+  h1=title 
+
+  div(class='games')
+    each game in games
+      div(class='game') 
+        a(href=`/game/${game.id}`) #{game.name}
+        p Price: #{game.price}
+        p Copies: #{game.copies}
+
+  hr
+  div.change
+    p
+      a(href=`/genre/${genre.id}/delete`) Delete genre
+    p  
+      a(href=`/genre/${genre.id}/update`) Update genre

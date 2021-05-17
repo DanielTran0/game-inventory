@@ -1,0 +1,11 @@
+extends  ../layout
+
+block content
+  h1=title 
+
+  div.genres
+    each genre in genres
+      div(class='genre') 
+        a(href=`/genre/${genre.id}`) #{genre.name}
+
+

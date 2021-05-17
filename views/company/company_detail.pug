@@ -1,0 +1,24 @@
+extends  ../layout
+
+block content
+  h1=title
+
+  div.companyDetails
+    if company.image 
+      img(src=`/images/${company.image}`, alt="company logo")
+    p #[strong Located:] #{company.location ? company.location : '-'} 
+    p #[strong Founded:] #{formattedDate === 'Jan 01, 0001' ? '-' : formattedDate}
+
+
+    div(class='games')
+      each game in games
+        div(class='game') 
+          a(href=`/game/${game.id}`) #{game.name}
+          p Price: #{game.price}
+          p Copies: #{game.copies}
+
+    hr
+    p
+      a(href=`/company/${company.id}/delete`) Delete company
+    p  
+      a(href=`/company/${company.id}/update`) Update company

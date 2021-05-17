@@ -1,0 +1,13 @@
+extends  ../layout
+
+block content
+  h1=title 
+
+  div(class = 'companies')
+    each company in companies
+      div(class='company') 
+        if company.image
+          img(src=`/images/${company.image}`, alt="company logo")
+        a(href=`/company/${company.id}`) #{company.name}
+
+

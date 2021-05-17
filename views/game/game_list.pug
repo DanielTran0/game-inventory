@@ -1,0 +1,13 @@
+extends  ../layout
+
+block content
+  h1=title 
+
+  div(class = 'games')
+    each game in games
+      div(class='game')
+        if game.image 
+          img(src=`/images/${game.image}`, alt="game") 
+        a(href=`/game/${game.id}`) #{game.name}
+        p Price: $ #{game.price}
+        p Copies: #{game.copies}

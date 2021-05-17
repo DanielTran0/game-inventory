@@ -1,0 +1,60 @@
+extends  ../layout
+
+block content
+  h1=title 
+
+  form(method='POST' action='' enctype='multipart/form-data')
+    div.form-group
+      label(for='name') Name: 
+      input#name(type="text" name='name' required=true value=(game === undefined ? '' : game.name))
+
+    div.form-group
+      label(for='price') Price: 
+      input#price(type="number" name='price' required=true value=(game === undefined ? '' : game.price))
+
+    div.form-group
+      label(for='copies') Copies: 
+      input#copies(type="number" name='copies' required=true value=(game === undefined ? '' : game.copies))
+      
+    div.form-group
+      label(for='companies') Company: 
+      select#companies(type='select' name='companies' placeholder='Select a Company' required)
+        option(value='' disabled selected) Select a Company
+        for company in companies 
+            if game.companies === company.id
+              option(value=company.id selected) #{company.name}
+            else
+              option(value=company.id) #{company.name}
+    
+    div.form-group
+      label System Availability:
+      div.checkboxes
+        div 
+          label(for='ps3') PS3 
+          input#ps3(type="checkbox" name='system' value=3 checked=game.systems[0].checked)
+        div
+          label(for='ps4') PS4 
+          input#ps4(type="checkbox" name='system' value=4 checked=game.systems[1].checked) 
+        div
+          label(for='ps5') PS5 
+          input#ps5(type="checkbox" name='system' value=5 checked=game.systems[2].checked) 
+      
+    div.form-group
+      label Genres: 
+      div.checkboxes 
+        for genre in genres
+          div
+            label(for=genre.id) #{genre.name} 
+            input#genre.id(type='checkbox' name='genres' value=genre.id checked=genre.checked)
+    
+    div.form-group.checkbox
+      label(for='image') Image (JPG or PNG):
+      input#image(type='file' name='image')
+
+
+    button(type='submit') Submit
+
+  if errors
+    ul 
+      for error in errors 
+        l1= error.msg

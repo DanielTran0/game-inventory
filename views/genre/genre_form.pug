@@ -1,0 +1,16 @@
+extends  ../layout
+
+block content
+  h1=title 
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name: 
+      input#name(type="text" name='name' required='true' value=(genre === undefined ? '' : genre.name))
+      
+    button(type='submit') Submit
+
+  if errors
+    ul 
+      for error in errors 
+        l1= error.msg
